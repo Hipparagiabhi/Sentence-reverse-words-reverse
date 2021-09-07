@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height:90vh;
+    }
+    .test{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: chartreuse;
+        margin-top: 20px;
+        width:900px;
+        height:900px;
+        }
+    #btn1{
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="test">
+            <h1> Enetr the Sentence to Reverse</h1>
+            <input type="input" id="textbox1">
+            <button type ="button" id="btn1" >click here to Reverse </button>
+            <p id="demo"></p>   
+        </div>
+    </div>
+    <script>
+        let inputBox=document.getElementById("textbox1");
+        let button=document.getElementById("btn1");
+        button.onclick=handler;
+
+        function handler(){
+            let inputBox1=inputBox.value;
+            console.log(inputBox1);
+            let wordArray=Array.from(inputBox1);
+            console.log(wordArray);
+            let wordReverse=wordArray.reverse(wordArray);
+            console.log(wordReverse);
+            let stringReverse=wordReverse.join("");
+            console.log(stringReverse);
+            document.getElementById("demo").innerHTML=stringReverse;
+        }
+    </script>
+</body>
+</html>
